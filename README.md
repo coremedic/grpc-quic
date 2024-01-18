@@ -14,7 +14,7 @@ go get github.com/coremedic/grpc-quic
 
 ### Import module
 ```go
-grpcquic "github.com/coremedic/grpc-quic"
+import grpcquic "github.com/coremedic/grpc-quic"
 ```
 
 ### Server
