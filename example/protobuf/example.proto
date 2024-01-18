@@ -1,0 +1,21 @@
+syntax = "proto3";
+package protobuf;
+
+// go_package option must be set correctly!
+option go_package = "github.com/coremedic/grpc-quic/example/protobuf";
+
+// Define service
+service ExampleService {
+    // Define remote procedure call
+    rpc Example (ExampleRequest) returns (ExampleResponse);
+}
+
+// Define rpc request
+message ExampleRequest {
+    string msg = 1;
+}
+
+// Define rpc response
+message ExampleResponse {
+    string msg = 1;
+}
