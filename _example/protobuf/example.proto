@@ -2,7 +2,7 @@ syntax = "proto3";
 package protobuf;
 
 // go_package option must be set correctly!
-option go_package = "github.com/coremedic/grpc-quic/example/protobuf";
+option go_package = "example/protobuf";
 
 // Define service
 service ExampleService {
