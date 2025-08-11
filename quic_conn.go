@@ -10,8 +10,8 @@ import (
 
 // QuicConn implements net.Conn using a QUIC connection and stream
 type QuicConn struct {
-	connection quic.Connection
-	stream     quic.Stream
+	connection *quic.Conn
+	stream     *quic.Stream
 }
 
 // Read reads data from the QUIC stream. Returns the number of bytes read and any error encountered
@@ -66,7 +66,7 @@ func (qc *QuicConn) SetWriteDeadline(t time.Time) error {
 }
 
 // NewQuicConn creates a new QuicConn with an open QUIC stream
-func NewQuicConn(connection quic.Connection) (net.Conn, error) {
+func NewQuicConn(connection *quic.Conn) (net.Conn, error) {
 	stream, err := connection.OpenStreamSync(context.Background())
 	if err != nil {
 		return nil, err
